@@ -43,7 +43,7 @@ export async function renderPost(postId) {
 
     postDetail.innerHTML = `
       <div class="bg-white p-5 rounded-[10px] my-[20px] mx-auto md:w-[60%] w-full ">
-        <h1 class="text-center">${title}</h1>
+        <h1 class="text-center text-2xl font-bold">${title}</h1>
         <div class="flex justify-between flex-wrap">
           <div class="flex gap-[10px] bg-white p-5 rounded-[10px]">
             <div class="flex justify-center items-center w-[43px] h-[43px] rounded-[50%] overflow-hidden">
