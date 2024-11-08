@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "watch:tailwind": "chokidar './index.html' './auth//.html' './post//.html' './profile//.html' './src//.{js,ts}' -c 'vite build'",
+    "watch:tailwind": "chokidar './index.html' './auth/.html' './post/.html' './profile/.html' './src/.{js,ts}' -c 'vite build'",
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "vite build && echo 'Production build ready'"
