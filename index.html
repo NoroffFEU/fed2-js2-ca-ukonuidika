@@ -10,101 +10,113 @@
     <meta name="Home page" content="This is my landing page for this site">
     <title>Popwall</title>
     <script type="module" src="/src/app.js"></script>
-    <link rel="stylesheet" type="text/css" href="./src/css/_reset.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/_reset.css" />
   </head>
 
   <body>
-    <div class="navBar" id="lgNav">
-      <div class="logodiv">
-        <img src="/src/assets/logo.png" alt="logo" class="logo">
-        <h3 class="logoText">Popwall</h3>
+    <div class="md:flex justify-between py-[20px] px-[3%] hidden">
+      <div class="flex gap-[10px] items-center">
+        <img
+          src="/src/assets/logo.png"
+          alt="logo"
+          class="md:w-[39px] w-[15px] md:h-[63px] h-[30px]">
+        <h3 class="font-bold md:text-2xl text-[16px]">Popwall</h3>
       </div>
-      <div class="navBarRight">
-        <a href="/post/create/"><div class="navBtn">Create</div></a>
-        <div class="profile-pic-container">
-          <img
-            src="https://www.pngitem.com/pimgs/m/272-2720656_user-profile-dummy-hd-png-download.png"
-            alt="Profile Picture"
-            class="profile-pic"
+      <div class="flex gap-[10px] items-center">
+        <a href="/post/create/"
+          ><div
+            class="py-[5px] px-[10px] rounded-[10px] text-[16px] font-bold cursor-pointer bg-[#06113e] text-white"
           >
-        </div>
+            Create
+          </div></a
+        >
       </div>
     </div>
 
-    <nav class="navBar" id="mdNav">
-      <div class="blogLogo">
-        <div class="logodiv">
-          <img src="/src/assets/logo.png" alt="logo" class="logo">
-          <h3 class="logoText">Popwall</h3>
+    <nav class="py-[20px] px-[3%] md:hidden">
+      <div class="flex justify-between items-center px-[3%] w-full">
+        <div class="flex gap-[10px] items-center">
+          <img
+            src="/src/assets/logo.png"
+            alt="logo"
+            class="md:w-[39px] w-[15px] md:h-[63px] h-[30px]">
+          <h3 class="font-bold md:text-2xl text-[16px]">Popwall</h3>
         </div>
-        <div><i class="fa-solid fa-bars hamburger" id="hamburger"></i></div>
+        <div>
+          <i
+            class="fa-solid fa-bars hamburger cursor-pointer"
+            id="hamburger"
+          ></i>
+        </div>
       </div>
 
       <div>
-        <ul class="navLinks" id="navLinks">
-            <li><a href="/"
-              ><i class="fa-solid fa-house"></i> Home</a></li>
-          <li><a href="/profile/"
-            ><i class="fa-regular fa-user"></i> Profile</a
-              ></li>
-          <li><a href="/post/create/"
-            ><i class="fa-solid fa-pen"></i> Create</a
-            ></li>
-            <li>
-              <a href="/auth/login/"
-                ><i class="fa-solid fa-right-from-bracket"></i> Login</a
-              >
-            </li>
-            <li>
-              <a href="/auth/register/"
-                ><i class="fa-solid fa-user-plus"></i> Register</a
-              >
-            </li>
-            <li id="mobileLogout">
-              <a href="#"
-                ><i class="fa-solid fa-right-from-bracket"></i> Logout
-              </a>
-            </li>
+        <ul
+          class="bg-white w-full hidden flex-col mt-[10px] absolute left-0"
+          id="navLinks"
+        >
+          <li class="list-none text-black">
+            <a href="/" class="block no-underline text-black p-[20px]"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+          </li>
+          <li class="list-none text-black">
+            <a href="/profile/" class="block no-underline text-black p-[20px]"
+              ><i class="fa-regular fa-user"></i> Profile</a
+            >
+          </li>
+          <li class="list-none text-black">
+            <a
+              href="/post/create/"
+              class="block no-underline text-black p-[20px]"
+              ><i class="fa-solid fa-pen"></i> Create</a
+            >
+          </li>
+          
+          <li id="mobileLogout" class="list-none text-black">
+            <a href="#" class="block no-underline text-black p-[20px]"
+              ><i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
 
-    <div class="mainBody">
-      <div class="mainBodyGrid">
-        <div class="gridNav">
+    <div
+      class="bg-[#f4f4f4] h-[90vh] overflow-y-scroll scrollbar-hide"
+      id="mainBody"
+    >
+      <div class="grid gap-5 md:grid-cols-3 grid-cols-1 md:p-10 p-[10px]">
+        <div class="hidden md:block">
           <div id="gridProfileContainer">
-            <div class="gridProfile" id="girdProfile"></div>
+            <div
+              class="flex gap-[10px] bg-white p-5 rounded-[10px]"
+              id="girdProfile"
+            ></div>
           </div>
 
-          <div class="gridLinks">
-            <ul>
-              <li>
-                <a href="/"><i class="fa-solid fa-house"></i> Home</a>
+          <div class="bg-white p-5 rounded-[10px] mt-[34px]">
+            <ul class="list-none">
+              <li class="mb-[24px] cursor-pointer">
+                <a href="/"><i class="fa-solid fa-house mr-[10px]"></i> Home</a>
               </li>
-              <li>
+              <li class="mb-[24px] cursor-pointer">
                 <a href="/profile/"
-                  ><i class="fa-regular fa-user"></i> Profile</a
+                  ><i class="fa-regular fa-user mr-[10px]"></i> Profile</a
                 >
               </li>
-              <li>
-                <a href="/auth/login/">
-                  <i class="fa-solid fa-right-from-bracket"></i> Login
-                </a>
+              
+              <li id="logout" class="mb-[24px] cursor-pointer">
+                <i class="fa-solid fa-right-from-bracket mr-[10px]"></i> Logout
               </li>
-              <li>
-                <a href="/auth/register/"
-                  ><i class="fa-solid fa-user-plus"></i> Register</a
-                >
-              </li>
-              <li id="logout">
-                <i class="fa-solid fa-right-from-bracket"></i> Logout
-              </li>
-            </ul>          </div>
+            </ul>
+          </div>
         </div>
-        <div>
+
+        <div class="col-span-2">
           <div id="gridMainPost"></div>
 
-          <div id="paginationControls" class="paginationControls"></div>
+          <div id="paginationControls" class="flex justify-between"></div>
         </div>
       </div>
     </div>

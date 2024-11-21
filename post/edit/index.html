@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta name="Edit page" content="This is where posts are edited" >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Edit page" content="This is where posts are edited">
+    <script
+      src="https://kit.fontawesome.com/3d70b51120.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Edit</title>
     <script type="module" src="/src/app.js" defer></script>
-</head>
+  </head>
 
-<body>
-    <div class="createReg">
-        <p class="createRegText">
-            <a href="/"><i class="fa-solid fa-chevron-left"></i> Home </a>
-        </p>
-        <hr >
-        <div class="createRegForm">
-            <h2>Edit Post</h2>
-            <form id="editPostForm" name="editPost">
-                <div class="create-input-container">
-                    <input type="text" placeholder="Title" id="postTitle" required >
-                </div>
-                <div class="create-input-container">
-                    <input type="text" placeholder="Image URL" id="postMedia" required >
-                </div>
-                <div class="create-input-container">
-                    <textarea id="postBody" placeholder="What's on your mind?" required></textarea>
-                </div>
-                <div id="loadingSpinner" style="display: none;">
-                    <i class="fas fa-spinner fa-spin"></i> Editing...
-                </div>
-                <div id="errorMessage" style="display: none; color: red;"></div>
-                <button class="createBtn" type="submit">Edit Post</button>
-            </form>
-        </div>
+  <body>
+    <div class="m-5 h-[100vh]">
+      <p class="text-left pl-5 text-[18px]">
+        <a href="/" class="no-underline text-[#06113e]"
+          ><i class="fa-solid fa-chevron-left"></i> Home
+        </a>
+      </p>
+      <hr>
+      <div class="my-[100px] mx-auto md:w-[60%] text-center w-[90%]">
+        <h2 class="my-[5px] text-xl font-bold">Edit Post</h2>
+        <form id="editPostForm" name="editPost" class="md:my-[40px] my-[20px]">
+          <div class="mb-5">
+            <input
+              type="text"
+              placeholder="Title"
+              id="postTitle"
+              class="w-full p-[10px] border border-[#ccc] rounded-[5px] box-border"
+              required>
+          </div>
+          <div class="mb-5">
+            <input
+              type="text"
+              placeholder="Image URL"
+              id="postMedia"
+              class="w-full p-[10px] border border-[#ccc] rounded-[5px] box-border"
+              required>
+          </div>
+          <div class="mb-5">
+            <textarea
+              id="postBody"
+              placeholder="What's on your mind?"
+              required
+              class="w-full h-[100px] my-[5px] px-[10px] py-[15px] border border-[#ccc] rounded-[5px] box-border"
+            ></textarea>
+          </div>
+          <div id="loadingSpinner" style="display: none">
+            <i class="fas fa-spinner fa-spin"></i> Editing...
+          </div>
+          <div id="errorMessage" style="display: none; color: red"></div>
+          <button
+            class="text-[18px] font-bold text-center py-[10px] px-[15px] w-full bg-[#06113e] text-white border-0 rounded-[5px] my-[15px]"
+            type="submit"
+          >
+            Edit Post
+          </button>
+        </form>
+      </div>
     </div>
-</body>
+  </body>
 </html>

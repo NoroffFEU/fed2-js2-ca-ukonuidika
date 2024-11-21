@@ -18,7 +18,7 @@ export function renderPosts(data, handleFollowButtonClick) {
 
   data.forEach((item) => {
     const div = document.createElement("div");
-    div.className = "gridPost";
+    div.className = "bg-white p-5 mb-5 cursor-pointer rounded-[20px]";
 
     const formattedDate = new Date(item.created).toLocaleString();
     const imageUrl = item.author.avatar.url
@@ -28,32 +28,34 @@ export function renderPosts(data, handleFollowButtonClick) {
     const isFollowing = checkIfFollowing(item.author.name);
 
     div.innerHTML = `
-      <div class="gridPostHeader">
-        <div class="gridProfile">
-          <div class="profile-pic-container-post">
-            <img src="${imageUrl}" alt="Profile Picture" class="profile-pic">
+      <div class="flex justify-between items-start">
+        <div class="flex gap-[10px] bg-white p-5 rounded-[10px]">
+          <div class="flex justify-center items-center w-[43px] h-[43px] rounded-[50%] overflow-hidden">
+            <img src="${imageUrl}" alt="Profile Picture" class="w-full h-full object-cover">
           </div>
           <div>
-            <h2 class="profileName-post">${item.author.name}</h2>
-            <p class="profileMail">${formattedDate}</p>
+            <h2 class="mt-0 mb-[2px] text-[16px]">${item.author.name}</h2>
+            <p class="text-[16px] text-[#ababab] mt-0">${formattedDate}</p>
           </div>
         </div>
-        <button class="gridPostHeaderBtn" id="followBtn">${
+        <button class="mt-5 py-[5px] px-[10px] rounded-[10px] text-[16px] font-bold cursor-pointer bg-[#06113e] text-white" id="followBtn">${
           isFollowing ? "Unfollow" : "Follow"
         }</button>
       </div>
-      <p class="gridPostText">${item.body}</p>
-      <div class="gridPostImg">
+      <p class="mt-0">${item.body}</p>
+      <div class="w-full h-[400px]">
         <img src="${
           item.media?.url ||
           "https://media.istockphoto.com/id/1128826884/vector/no-image-vector-symbol-missing-available-icon-no-gallery-for-this-moment.jpg?s=612x612&w=0&k=20&c=390e76zN_TJ7HZHJpnI7jNl7UBpO3UP7hpR2meE1Qd4="
-        }" alt="Image" />
+        }" alt="Image" class="w-full h-full object-contain"/>
       </div>
-      <div class="gridPostReactions">
-        <div><i class="fa-regular fa-thumbs-up" id="reaction" data-symbol="👍"></i> <span class="reaction-count">${
+      <div class="flex justify-between items-center mt-20px">
+        <div><i class="fa-regular fa-thumbs-up text-[18px]" id="reaction" data-symbol="👍" ></i> <span>${
           item._count.reactions
         }</span></div>
-        <div><i class="fa-solid fa-message"></i> ${item._count.comments}</div>
+        <div><i class="fa-solid fa-message text-[18px]" ></i> ${
+          item._count.comments
+        }</div>
       </div>
     `;
 

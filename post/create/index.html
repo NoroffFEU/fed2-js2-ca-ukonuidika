@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta name="Create page" content="This is where posts are created" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Create page" content="This is where posts are created">
     <title>Create</title>
     <script type="module" src="/src/app.js"></script>
     <script
@@ -12,25 +12,40 @@
     ></script>
   </head>
   <body>
-    <div class="createReg">
-      <p class="createRegText">
+    <div class="m-5 h-[100vh]">
+      <p class="text-left pl-5 text-[18px]">
         <a href="/"><i class="fa-solid fa-chevron-left"></i> Home </a>
       </p>
-      <hr >
-      <div class="createRegForm">
-        <h2>Create Post</h2>
-        <form method="post" id="createPost" name="createPost">
-          <div class="create-input-container">
-            <input type="text" placeholder="title" id="title" required >
+      <hr>
+      <div class="my-[100px] mx-auto md:w-[60%] text-center w-[90%]">
+        <h2 class="my-[5px] text-xl font-bold">Create Post</h2>
+        <form
+          method="post"
+          id="createPost"
+          name="createPost"
+          class="md:my-[40px] my-[20px]">
+          <div class="mb-5">
+            <input
+              type="text"
+              placeholder="title"
+              id="title"
+              class="w-full p-[10px] border border-[#ccc] rounded-[5px] box-border"
+              required>
           </div>
-          <div class="create-input-container">
-            <input type="text" placeholder="Image URL" id="image" required >
+          <div class="mb-5">
+            <input
+              type="text"
+              placeholder="Image URL"
+              id="image"
+              class="w-full p-[10px] border border-[#ccc] rounded-[5px] box-border"
+              required>
           </div>
-          <div class="create-input-container">
+          <div class="mb-5">
             <textarea
               id="content"
               placeholder="What's on your mind?"
               required
+              class="w-full h-[100px] my-[5px] px-[10px] py-[15px] border border-[#ccc] rounded-[5px] box-border"
             ></textarea>
           </div>
 
@@ -38,7 +53,12 @@
             <i class="fas fa-spinner fa-spin"></i> creating...
           </div>
           <div id="errorMessage" style="display: none; color: red"></div>
-          <button class="createBtn" type="submit">Create</button>
+          <button
+            class="text-[18px] font-bold text-center py-[10px] px-[15px] w-full bg-[#06113e] text-white border-0 rounded-[5px] my-[15px]"
+            type="submit"
+          >
+            Create
+          </button>
         </form>
       </div>
     </div>

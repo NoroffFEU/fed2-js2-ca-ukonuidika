@@ -15,6 +15,9 @@ export function updatePaginationControls(
   if (!meta.isFirstPage) {
     const prevButton = document.createElement("button");
     prevButton.textContent = "Previous";
+    prevButton.className =
+      "text-[16px] font-bold text-center py-[10px] px-[15px] bg-[#06113e] text-white border-0 rounded-[5px] my-[15px]";
+
     prevButton.addEventListener("click", () => {
       if (currentPage > 1) {
         currentPage--;
@@ -36,6 +39,9 @@ export function updatePaginationControls(
   if (!meta.isLastPage) {
     const nextButton = document.createElement("button");
     nextButton.textContent = "Next";
+    nextButton.className =
+      "text-[16px] font-bold text-center py-[10px] px-[15px] bg-[#06113e] text-white border-0 rounded-[5px] my-[15px]";
+
     nextButton.addEventListener("click", () => {
       currentPage++;
       readProfiles(limit, currentPage).then((response) => {

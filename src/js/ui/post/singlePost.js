@@ -29,11 +29,11 @@ export async function renderPost(postId) {
     const editDeleteButtons = isPostOwner
       ? `
      <a href="/post/edit/?id=${id}">
-       <button class="gridPostHeaderBtn">
+       <button class="mt-5 py-[5px] px-[10px] rounded-[10px] text-[16px] font-bold cursor-pointer bg-[#06113e] text-white">
          <i class="fa-solid fa-pen"></i>
        </button>
      </a>
-     <button class="gridPostHeaderBtn" id="delete-post">
+     <button class="mt-5 py-[5px] px-[10px] rounded-[10px] text-[16px] font-bold cursor-pointer bg-[#06113e] text-white md:mb-0 mb-5" id="delete-post">
        <i class="fa-solid fa-trash-can"></i>
      </button>
    `
@@ -42,40 +42,42 @@ export async function renderPost(postId) {
     const isFollowing = await checkIfFollowing(author.name);
 
     postDetail.innerHTML = `
-      <div class="blogPost">
-        <h1 class="blogPostHeader">${title}</h1>
-        <div class="gridBlogPostHeader">
-          <div class="gridProfile">
-            <div class="profile-pic-container-post">
-              <img src="https://www.pngitem.com/pimgs/m/272-2720656_user-profile-dummy-hd-png-download.png" alt="Profile Picture" class="profile-pic">
+      <div class="bg-white p-5 rounded-[10px] my-[20px] mx-auto md:w-[60%] w-full ">
+        <h1 class="text-center text-2xl font-bold">${title}</h1>
+        <div class="flex justify-between flex-wrap">
+          <div class="flex gap-[10px] bg-white p-5 rounded-[10px]">
+            <div class="flex justify-center items-center w-[43px] h-[43px] rounded-[50%] overflow-hidden">
+              <img src="https://www.pngitem.com/pimgs/m/272-2720656_user-profile-dummy-hd-png-download.png" alt="Profile Picture" class="w-full h-full object-cover">
             </div>
             <div>
-              <h2 class="profileName-post">${author.name}</h2>
-              <p class="profileMail">${date}</p>
+              <h2 class="mt-0 mb-[2px] text-[16px]">${author.name}</h2>
+              <p class="text-[16px] text-[#ababab] mt-0">${date}</p>
             </div>
           </div>
-          <div class="gridPostHeaderBtnContainer">
-              <button class="gridPostHeaderBtn" id="followBtn">${
+          <div >
+              <button class="mb-5 md:mb-0 mt-5 py-[5px] px-[10px] rounded-[10px] text-[16px] font-bold cursor-pointer bg-[#06113e] text-white" id="followBtn">${
                 isFollowing ? "Unfollow" : "Follow"
               }</button>
               ${editDeleteButtons}
             </div>
         </div>
-        <p class="gridBlogPostText">${body}</p>
-        <div class="gridBlogPostImg">
-          <img src="${imageUrl}" alt="Post Image"/>
+        <p class="md:mt-0 mt-[16px]">${body}</p>
+        <div class="w-full md:h-[400px] h-full">
+          <img src="${imageUrl}" alt="Post Image" class="w-full h-full object-contain"/>
         </div>
-        <div class="gridPostReactions">
-          <div><i class="fa-regular fa-thumbs-up" id="reaction" data-symbol="👍"></i> <span class="reaction-count">${reactions}</span></div>
-          <div><i class="fa-solid fa-message"></i> ${_count.comments}</div>
+        <div class="flex justify-between items-center mt-5">
+          <div><i class="fa-regular fa-thumbs-up text-[16px] cursor-pointer" id="reaction" data-symbol="👍"></i> <span>${reactions}</span></div>
+          <div><i class="fa-solid fa-message text-[16px]"></i> ${
+            _count.comments
+          }</div>
         </div>
-        <div class="blogPostComment">
+        <div class="mt-5">
           <h4>All comments</h4>
-          <div id="commentsSection"></div> <!-- Placeholder for the comments -->
-          <!-- Add Comment Section -->
-          <form id="addCommentSection">
-            <textarea id="newComment" placeholder="Add a comment..." rows="3" required></textarea>
-            <button id="submitComment">Submit</button>
+          <div id="commentsSection"></div> 
+          
+          <form id="addCommentSection" class="mt-5">
+            <textarea id="newComment" class=" border border-gray-400 first-letter:md:ml-[60px] p-[10px] resize-none w-[200px] ml-0" placeholder="Add a comment..." rows="3" required></textarea>
+            <button id="submitComment" class="flex justify-center md:ml-[60px] ml-0 text-[14px] font-bold text-center py-[5px] px-[7px] bg-[#06113e] text-white border-0 rounded-[5px]">Submit</button>
           </form>
         </div>
       </div>

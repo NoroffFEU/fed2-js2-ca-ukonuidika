@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta name="Login page" content="This is where the login are done" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Login page" content="This is where the login are done">
     <title>Login</title>
     <script type="module" src="/src/app.js"></script>
     <script
@@ -14,46 +14,48 @@
   </head>
 
   <body>
-    <div class="reg">
-      <div class="logosection">
-        <div class="logodiv">
-          <img src="../../src/assets/logo.png" class="logo" alt="logo">
-          <h3 class="logoText">Popwall</h3>
+    <div >
+      <div class="flex justify-between md:px-[6%] py-5 px-[3%]">
+        <div class="flex gap-[10px] items-center">
+          <img src="../../src/assets/logo.png" class="w-[39px] h-[65px] md:w-[15px] md:h-[30px]" alt="logo">
+          <h3 class="font-bold md:text-2xl text-[16px]">Popwall</h3>
         </div>
-        <div class="rightSection">
-          <p class="regText">you don't have an account?</p>
+        <div class="flex md:gap-5 items-center gap-[5px]">
+          <p class="text-2xl font-normal md:block hidden">you don't have an account?</p>
           <div> 
-          <a href="/auth/register/ " class="logoLink"><div class="logoSectionBtn">Sign Up</div></a>
+          <a href="/auth/register/ " class="no-underline text-black"><div class="py-[5px] px-[15px] border border-black rounded-[10px] md:text-2xl text-[16px] font-normal cursor-pointer bg-white no-underline">Sign Up</div></a>
         </div>
         </div>
           
       </div>
 
-      <div class="mainContentLogin">
-        <div class="mainContentText">
+      <div class="grid gap-[130px] md:grid-cols-2 grid-cols-1 md:py-10 py-20 px-10 h-[100vh] bg-custom-gradient"
+      >
+        <div class="md:flex items-center text-custom-blue hidden mt-180px ">
           <p>Welcome to popwall, here you can meet with new and interesting individuals, have friends and share ideas and interest, engage with people from different works of live and watch your day come alive as you build relationship in this free platform, what are you waiting for</p>
         </div>
-        <div class="regFormLogin">
-          <h2>Welcome Back</h2>
-          <p>Welcome to popwall</p>
-          <form method="post" id="loginForm" name="login">
+        <div class="  md:py-[63px] md:px-[20px] md:h-[600px] w bg-white rounded-[20px] w-full py-[20px] px-[15px] h-[400px]">
+          <h2 class="my-[5px] md:text-[32px] font-bold text-[14px]">Welcome Back</h2>
+          <p class="md:text-[16px] text-[#8bc4ff] md:mt-[39px] mb-[20px] mt-[20px] text-[14px]">Welcome to popwall</p>
+          <form method="post" id="loginForm" name="login" class="my-[40px]">
             
-            <div class="input-container">
-              <i class="icon fa-regular fa-envelope"></i>
-              <input type="email" placeholder="Email" id="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$">
+            <div class="relative mb-5">
+              <i class="absolute top-1/2 left-2 transform -translate-y-1/2 text-gray-400 fa-regular fa-envelope"></i>
+              <input type="email" placeholder="Email" id="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" class="w-full p-[10px] pl-[40px] border border-[#ccc] rounded-[5px] box-border">
             </div>
             
-            <div class="input-container">
-              <i class="icon fas fa-lock"></i>
+            <div class="relative mb-5">
+              <i class="absolute top-1/2 left-2 transform -translate-y-1/2 text-gray-400 fas fa-lock"></i>
               <input
                 type="password"
                 placeholder="Password"
                 required
                 minlength="8"
                 id="password"
+                class="w-full p-[10px] pl-[40px] border border-[#ccc] rounded-[5px] box-border"
               >
-              <span id="toggle-password" class="toggleBtn">
-                <i class="toggle-password fas fa-eye-slash"></i
+              <span id="toggle-password" >
+                <i class="absolute top-1/2 right-2 transform -translate-y-1/2 text-gray-400 cursor-pointer fas fa-eye-slash"></i
               ></span>
             </div>
             
@@ -61,7 +63,7 @@
               <i class="fas fa-spinner fa-spin"></i> Logining...
             </div>
             <div id="errorMessage" style="display: none; color: red"></div>
-            <button type="submit" class="submitBtn">Login</button>
+            <button type="submit"  class="md:text-[16px] text-[14px] font-bold text-center md:p-[15px] p-[10px] w-full bg-[#06113e] text-white border-0 rounded-[5px] my-[15px] cursor-pointer">Login</button>
           </form>
         </div>
       </div>

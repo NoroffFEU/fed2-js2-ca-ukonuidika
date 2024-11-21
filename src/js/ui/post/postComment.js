@@ -54,17 +54,17 @@ export function onGenerateComments(comments) {
   commentMap.forEach((comment) => {
     const commentDate = new Date(comment.created).toLocaleString();
     const commentHtml = `
-    <div class="blogProfile">
-      <div class="profile-pic-container-blog">
-        <img src="${comment.author.avatar.url}" alt="${comment.author.avatar.alt}" class="profile-pic">
+    <div class="flex gap-[10px] bg-white p-5 rounded-[10px]">
+      <div class="flex justify-center items-center w-[25px] h-[25px] rounded-[50%] overflow-hidden mt-[10px]">
+        <img src="${comment.author.avatar.url}" alt="${comment.author.avatar.alt}" class="w-full h-full object-cover">
       </div>
       <div>
-        <div class="commentSec">
-          <h2 class="commentProfileName">${comment.author.name}</h2>
-          <p class="comment">${comment.body}</p>
+        <div class="bg-[f4f4f4] p-[10px] rounded-[20px]">
+          <h2 class="m-0 text-[16px]">${comment.author.name}</h2>
+          <p>${comment.body}</p>
           <p>${commentDate}</p>
-          <textarea class="replyInput" id="replyInput-${comment.id}" placeholder="Reply to this comment..." rows="2"></textarea>
-          <button class="replyButton" data-comment-id="${comment.id}">Reply</button>
+          <textarea class="w-full resize-none border border-gray-400 p-[10px]" id="replyInput-${comment.id}" placeholder="Reply to this comment..." rows="2"></textarea>
+          <button class="text-[14px] font-bold text-center p-[10px] bg-[#06113e] text-white border-0 rounded-[5px] my-[15px] replyButton" data-comment-id="${comment.id}">Reply</button>
         </div>
       </div>
     </div>
@@ -76,20 +76,20 @@ export function onGenerateComments(comments) {
       comment.replies.forEach((reply) => {
         const replyDate = new Date(reply.created).toLocaleString();
         const replyHtml = `
-        <div class="blogProfile reply">
-          <div class="profile-pic-container-blog">
-            <img src="${reply.author.avatar.url}" alt="${reply.author.avatar.alt}" class="profile-pic">
+        <div class="flex gap-[10px] bg-white p-5 rounded-[10px]">
+          <div class="flex justify-center items-center w-[25px] h-[25px] rounded-[50%] overflow-hidden mt-[10px]">
+            <img src="${reply.author.avatar.url}" alt="${reply.author.avatar.alt}" class="w-full h-full object-cover">
           </div>
           <div>
-            <div class="replySec">
-              <h2 class="replyProfileName">${reply.author.name}</h2>
-              <p class="replyComment">${reply.body}</p>
+            <div class="bg-[#f5f5f5] p-[5px] rounded-[5px]">
+              <h2 class="font-bold">${reply.author.name}</h2>
+              <p class="mt-[5px]">${reply.body}</p>
               <p>${replyDate}</p>
             </div>
           </div>
         </div>
         `;
-        commentsSection.innerHTML += `<div class="replyContainer">${replyHtml}</div>`;
+        commentsSection.innerHTML += `<div class="ml-[40px] border-l-[2px] border-[#ddd] pl-[10px]">${replyHtml}</div>`;
       });
     }
     const replyButtons = document.querySelectorAll(".replyButton");

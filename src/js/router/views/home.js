@@ -16,7 +16,8 @@ const hamburger = document.getElementById("hamburger");
 if (hamburger) {
   hamburger.addEventListener("click", () => {
     const menu = document.getElementById("navLinks");
-    if (menu) menu.classList.toggle("active");
+    if (menu) menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
   });
 }
 
